@@ -1,14 +1,30 @@
 const out = document.getElementById("out");
 const goButton = document.querySelector("button");
-
+const in1 = document.getElementById("in1");
+const cb1 = document.getElementById("cb1");
 
 goButton.onclick = () => {
-    const in1 = document.getElementById("in1").value;
-    const in2 = document.getElementById("in2").value;
+    // const in1Val = in1.value;
 
-    if (in1 == in2) {
-        out.innerHTML = "equals";
-    } else {
-        out.innerHTML = Math.max(in1, in2);
+    // console.log(in1Val);
+
+    // goButton.style.backgroundColor = in1Val;
+
+    out.innerHTML = "<input type=text id=in3><button id=new>NEW</button>";
+
+    document.getElementById('in3').oninput = () => {
+        console.log(document.getElementById('in3').value);
     }
+
+    // console.log(cb1.checked);
+
 }
+
+// in1.oninput = () => {
+//     console.log(in1.value);
+//     out.innerHTML = in1.value;
+// }
+
+// cb1.oninput = () => {
+//     console.log(cb1.checked);
+// }
