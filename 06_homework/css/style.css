@@ -11,41 +11,17 @@ pre {
     font-family: monospace;
 }
 pre.task-1-out {
-    height: 20px;
+    height: 15px;
 }
-pre.task-2-out {
+pre.task-50-out {
     height: 50px;
 }
-pre.task-3-out {
-    height: 50px;
-}
-pre.task-4-out {
-    height: 50px;
-}
-pre.task-5-out {
-    height: 50px;
-}
-pre.task-6-out {
-    height: 70px;
-}
-pre.task-7-out {
+pre.task-40-out {
     height: 40px;
 }
-pre.task-8-out {
-    height: 70px;
+pre.task-11-out {
+    height: 300px;
 }
-pre.task-9-out {
-    height: 70px;
-}
-pre.task-10-out {
-    height: 75px;
-}
-pre.task-12-out {
-    height: 75px;
-}
-pre.task-13-out {
-    height: 75px;
-}
-pre.task-14-out {
+pre.task-75-out {
     height: 75px;
 }
