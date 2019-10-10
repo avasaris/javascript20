@@ -1,6 +1,6 @@
 // task 1 --------------------
 
-const out1 = document.querySelector('.task-1-out#rez1');
+const out1 = document.querySelector('.task-1-out#rez-1');
 const button1 = document.querySelector("button.task-1");
 let rez1 = "   ";
 
@@ -25,7 +25,7 @@ button1.onclick = () => {
 
 // task 2 --------------------
 
-const out2 = document.querySelector(".task-2-out#rez2");
+const out2 = document.querySelector(".task-2-out#rez-2");
 const button2 = document.querySelector("button.task-2");
 let rez2 = "";
 
@@ -51,7 +51,7 @@ button2.onclick = () => {
 
 // task 3 --------------------
 
-const out3 = document.querySelector(".task-3-out#rez3");
+const out3 = document.querySelector(".task-3-out#rez-3");
 const button3 = document.querySelector("button.task-3");
 let rez3 = "";
 
@@ -77,7 +77,7 @@ button3.onclick = () => {
 
 // task 4 --------------------
 
-const out4 = document.querySelector(".task-4-out#rez4");
+const out4 = document.querySelector(".task-4-out#rez-4");
 const button4 = document.querySelector("button.task-4");
 let rez4 = "";
 
@@ -107,7 +107,7 @@ button4.onclick = () => {
 
 // task 5 --------------------
 
-const out5 = document.querySelector(".task-5-out#rez5");
+const out5 = document.querySelector(".task-5-out#rez-5");
 const button5 = document.querySelector("button.task-5");
 let rez5 = "";
 
@@ -133,7 +133,7 @@ button5.onclick = () => {
 
 // task 6 --------------------
 
-const out6 = document.querySelector(".task-6-out#rez6");
+const out6 = document.querySelector(".task-6-out#rez-6");
 const button6 = document.querySelector("button.task-6");
 let rez6 = "";
 
@@ -156,4 +156,114 @@ button6.onclick = () => {
         button6.innerHTML = "Clear";
     }
 }
+
+// task 7 --------------------
+
+const out7 = document.querySelector(".task-7-out#rez-7");
+const button7 = document.querySelector("button.task-7");
+let rez7 = "";
+
+for (let i = 3; i > 0; i--) {
+    for (let j = 0; j < (i + 2); j++) rez7 += " ";
+    for (let j = 0; j < 6; j++) rez7 += "*";
+    for (let j = i; j < 5; j++) rez7 += " ";
+    rez7 += `\n`;
+}
+
+rez7 = rez7.trimEnd();
+
+button7.onclick = () => {
+    if (out7.innerHTML) {
+        out7.innerHTML = "";
+        button7.innerHTML = "Run";
+    } else {
+        out7.innerHTML = rez7;
+        button7.innerHTML = "Clear";
+    }
+}
+
+// task 8 --------------------
+
+const out8 = document.querySelector(".task-8-out#rez-8");
+const button8 = document.querySelector("button.task-8");
+let rez8 = "";
+
+for (let i = 0; i < 3; i++) {
+    rez8 += "   ";
+    for (let j = 0; j <= i; j++) rez8 += "*";
+    rez8 += `\n`;
+}
+for (let i = 2; i > 0; i--) {
+    rez8 += "   ";
+    for (let j = i; j > 0; j--) rez8 += "*";
+    rez8 += `\n`;
+}
+
+rez8 = rez8.trimEnd();
+
+button8.onclick = () => {
+    if (out8.innerHTML) {
+        out8.innerHTML = "";
+        button8.innerHTML = "Run";
+    } else {
+        out8.innerHTML = rez8;
+        button8.innerHTML = "Clear";
+    }
+}
+
+// task 9 --------------------
+
+const out9 = document.querySelector(".task-9-out#rez-9");
+const button9 = document.querySelector("button.task-9");
+let rez9 = "";
+
+for (let i = 0; i < 5; i++) {
+    rez9 += "   ";
+    for (let j = 0; j < 6; j++) {
+        if (i == 0 || i == 4 || (j == 0 || j == 5)) rez9 += "*"; else rez9 += " ";
+    }
+    rez9 += `\n`;
+}
+
+rez9 = rez9.trimEnd();
+
+button9.onclick = () => {
+    if (out9.innerHTML) {
+        out9.innerHTML = "";
+        button9.innerHTML = "Run";
+    } else {
+        out9.innerHTML = rez9;
+        button9.innerHTML = "Clear";
+    }
+}
+
+// task 10 --------------------
+
+const out10 = document.querySelector(".task-10-out#rez-10");
+const button10 = document.querySelector("button.task-10");
+
+button10.onclick = () => {
+
+    let rez10 = "";
+    const sym10 = document.querySelector("#sym-10").value;
+
+    for (let i = 0; i < 5; i++) {
+        rez10 += "   ";
+        for (let j = 0; j < 6; j++) {
+            if (i == 0 || i == 4 || (j == 0 || j == 5)) rez10 += sym10; else rez10 += " ";
+        }
+        rez10 += `\n`;
+    }
+
+    rez10 = rez10.trimEnd();
+
+    if (out10.innerHTML) {
+        out10.innerHTML = "";
+        button10.innerHTML = "Run";
+    } else {
+        out10.innerHTML = rez10;
+        button10.innerHTML = "Clear";
+    }
+}
+
 
