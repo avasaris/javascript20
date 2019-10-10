@@ -1,0 +1,30 @@
+html, body {
+    font-family: serif;
+}
+body {
+    margin: 20px;
+}
+pre {
+    border: 1px solid #c0c0c0;
+    background: #fff;
+    padding: 5px;
+    font-family: monospace;
+}
+pre.task-1-out {
+    height: 20px;
+}
+pre.task-2-out {
+    height: 50px;
+}
+pre.task-3-out {
+    height: 50px;
+}
+pre.task-4-out {
+    height: 50px;
+}
+pre.task-5-out {
+    height: 50px;
+}
+pre.task-6-out {
+    height: 70px;
+}
