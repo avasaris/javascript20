@@ -267,3 +267,92 @@ button10.onclick = () => {
 }
 
 
+// task 11 --------------------
+
+const out11 = document.querySelector(".task-11-out#rez-11");
+let rez11 = "";
+
+for (let i = 6; i <= 7; i++) {
+    for (let j = 1; j <= 9; j++) {
+        rez11 += `${i} * ${j} = ${i * j}\n`;
+    }
+    rez11 += "<hr>";
+}
+
+out11.innerHTML = rez11;
+
+// task 12 --------------------
+
+const out12 = document.querySelector(".task-12-out#rez-12");
+const button12 = document.querySelector("button.task-12");
+let rez12 = "";
+
+for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= i; j++) {
+        rez12 += `${j} `;
+    }
+    rez12 += `\n`;
+}
+
+rez12 = rez12.trimEnd();
+
+button12.onclick = () => {
+    if (out12.innerHTML) {
+        out12.innerHTML = "";
+        button12.innerHTML = "Run";
+    } else {
+        out12.innerHTML = rez12;
+        button12.innerHTML = "Clear";
+    }
+}
+
+// task 13 --------------------
+
+const out13 = document.querySelector(".task-13-out#rez-13");
+const button13 = document.querySelector("button.task-13");
+let rez13 = "";
+
+for (let i = 0; i < 5; i++) {
+    for (let j = 1; j < 10; j++) {
+        rez13 += `${i}${j} `;
+    }
+    rez13 += `${(i + 1) * 10}\n`;
+}
+
+rez13 = rez13.trimEnd();
+
+button13.onclick = () => {
+    if (out13.innerHTML) {
+        out13.innerHTML = "";
+        button13.innerHTML = "Run";
+    } else {
+        out13.innerHTML = rez13;
+        button13.innerHTML = "Clear";
+    }
+}
+
+// task 14 --------------------
+
+const out14 = document.querySelector(".task-14-out#rez-14");
+const button14 = document.querySelector("button.task-14");
+let rez14 = "";
+
+for (let i = 5; i > 0; i--) {
+    for (let j = i; j > 0; j--) {
+        rez14 += `${j} `;
+    }
+    rez14 += `\n`;
+}
+
+rez14 = rez14.trimEnd();
+
+button14.onclick = () => {
+    if (out14.innerHTML) {
+        out14.innerHTML = "";
+        button14.innerHTML = "Run";
+    } else {
+        out14.innerHTML = rez14;
+        button14.innerHTML = "Clear";
+    }
+}
+
