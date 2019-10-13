@@ -98,8 +98,8 @@ function func_9(elem) {
 }
 
 // TASK 10. Напишите функцию func_10, которая при клике на кнопке.u-10__button читает атрибут валюты data-currency и на основании этого выводит в p.u-10__out коэффициент данной валюты по отношению к доллару.Коэффициент возьмите приблизительно из интернета.Считается, что пользователь всегда вводит валюту в долларах.
-function currencyFromUSD(value){
-    switch(value){
+function currencyFromUSD(value) {
+    switch (value) {
         case "euro":
             return 0.97;
             break;
@@ -116,7 +116,7 @@ function currencyFromUSD(value){
 
 // TASK 10.
 
-const buttons10=document.querySelectorAll("button.u-10__button");
+const buttons10 = document.querySelectorAll("button.u-10__button");
 
 setOnClickFunction(buttons10, function () { func_10(this); });
 
@@ -127,7 +127,7 @@ function func_10(elem) {
 
 // TASK 11.Напишите функцию func_11, которая при клике на кнопке.u-11__button читает атрибут валюты data-currency и на основании этого выводит в p.u-11__out перевод валюты введенной пользователем в input.u-11__input в указанную валюту.Считается, что пользователь всегда вводит валюту в долларах. 
 
-const buttons11=document.querySelectorAll("button.u-11__button");
+const buttons11 = document.querySelectorAll("button.u-11__button");
 
 setOnClickFunction(buttons11, function () { func_11(this); });
 
@@ -145,23 +145,69 @@ function func_12() {
     return div12;
 }
 
+console.log("<<< TASK 12. >>>");
 console.log(func_12());
 
-// TASK  13.Создайте функцию func_13, которая создает элемент span.span-13 с текстом 13 через createElement и вставляет его в p.u-13(append).
+// TASK  13. Создайте функцию func_13, которая создает элемент span.span-13 с текстом 13 через createElement и вставляет его в p.u-13(append).
+function createElement(type, cls, html) {
+    elem = document.createElement(type);
+    elem.setAttribute("class", cls);
+    elem.innerHTML = html;
 
-function func_13() { }
+    return elem;
+}
+
+// TASK  13.
+
+function func_13() {
+    span13 = createElement("span", "span-13", 13);
+
+    pu13 = document.querySelector("p.u-13");
+    pu13.append(span13);
+    return pu13;
+}
+
+console.log("<<< TASK 13. >>>");
+console.log(func_13());
 
 // TASK  14. Создайте функцию func_14, которая создает элемент span.span-14 с текстом 14 через createElement и вставляет его в p.u-14(prepend).
 
-function func_14() { }
+function func_14() {
+    span14 = createElement("span", "span-14", 14);
+
+    pu14 = document.querySelector("p.u-14");
+    pu14.prepend(span14);
+    return pu14;
+}
+
+console.log("<<< TASK 14. >>>");
+console.log(func_14());
 
 // TASK 15. Создайте функцию func_15, которая создает элемент span.span-15 с текстом 15 через createElement и вставляет его в p.u-15(before)
 
-function func_15() { }
+function func_15() {
+    span15 = createElement("span", "span-15", 15);
+
+    pu15 = document.querySelector("p.u-15");
+    pu15.before(span15);
+    return pu15;
+}
+
+console.log("<<< TASK 15. >>>");
+console.log(func_15().parentElement);
 
 // TASK    16. Создайте функцию funct-16, которая создает элемент button.u-16 c текстом Push.Повесьте на данный элемент событие onclick со стрелочной функцией, которая в консоль выводит текст u-16. И после добавления события добавьте данный элемент на страницу в div.u-16__out.Проверьте работоспособность события.
 
-function func_16() { }
+function func_16() {
+    b16 = document.createElement("button");
+    b16.innerHTML = "Push";
+    b16.onclick = () => {
+        console.log("u-16");
+    }
+    return b16;
+}
+
+document.querySelector("div.u-16__out").append(func_16());
 
 // TASK 17. Создайте функцию, funct-17, которая при запуске создаст элемент p c текстом 17 и заменит этим элементом div.u-17
 
