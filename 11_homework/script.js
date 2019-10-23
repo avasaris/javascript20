@@ -3,7 +3,7 @@ function printArray(arr, selector) {
     let out = "";
     if (arr && arr.length) out = JSON.stringify(arr);
 
-    divOut = document.querySelector(selector).innerHTML = out;
+    document.querySelector(selector).innerHTML = out;
 }
 
 /* 
@@ -12,12 +12,12 @@ Task 1.     Создайте пустой массив arr1, input.u-1, кноп
             содержимое массива в div.out-1.
 */
 
-let arr1 = [];
+const arr1 = [];
 
 document.querySelector("button.u-2__push").onclick = () => {
     const inp1 = document.querySelector("input.u-1").value;
 
-    if (inp1 == "") return;
+    if (inp1 === "") return;
 
     arr1.push(inp1);
 
@@ -57,7 +57,7 @@ Task 4.     Добавьте к заданию 1 кнопку button.u-4__unshif
 document.querySelector("button.u-4__unshift").onclick = () => {
     const inp4 = document.querySelector("input.u-4").value;
 
-    if (inp4 == "") return;
+    if (inp4 === "") return;
 
     arr1.unshift(inp4);
 

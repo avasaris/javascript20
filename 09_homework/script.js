@@ -5,7 +5,7 @@ function func_1(width = 100, height = 200) {
 
     pu1Style.background = "lightGray";
     pu1Style.width = `${width}px`;
-    pu1Style.height = `${width}px`;
+    pu1Style.height = `${height}px`;
 }
 
 func_1();
@@ -74,7 +74,7 @@ function func_7() {
     return document.querySelectorAll(".css-3").length;
 }
 
-//console.log("Task 7 answer: " + func_7());
+// console.log("Task 7 answer: " + func_7());
 document.getElementById("out-7").innerHTML = func_7();
 
 
