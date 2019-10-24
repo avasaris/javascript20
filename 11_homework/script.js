@@ -1,8 +1,8 @@
 function printArray(arr, selector) {
-  let out = "";
-  if (arr && arr.length) out = JSON.stringify(arr);
+    let out = '';
+    if (arr && arr.length) out = JSON.stringify(arr);
 
-  document.querySelector(selector).innerHTML = out;
+    document.querySelector(selector).innerHTML = out;
 }
 
 /* 
@@ -13,14 +13,14 @@ Task 1.     Создайте пустой массив arr1, input.u-1, кноп
 
 const arr1 = [];
 
-document.querySelector("button.u-2__push").onclick = () => {
-  const inp1 = document.querySelector("input.u-1").value;
+document.querySelector('button.u-2__push').onclick = () => {
+    const inp1 = document.querySelector('input.u-1').value;
 
-  if (inp1 === "") return;
+    if (inp1 === '') return;
 
-  arr1.push(inp1);
+    arr1.push(inp1);
 
-  printArray(arr1, "div.out-1");
+    printArray(arr1, 'div.out-1');
 };
 
 /*
@@ -28,10 +28,10 @@ Task 2.     Добавьте к предыдущему заданию кнопк
             применяется метод pop, после чего массив выводится в div.out-1
 */
 
-document.querySelector("button.u-2__pop").onclick = () => {
-  arr1.pop();
+document.querySelector('button.u-2__pop').onclick = () => {
+    arr1.pop();
 
-  printArray(arr1, "div.out-1");
+    printArray(arr1, 'div.out-1');
 };
 
 /*
@@ -39,10 +39,10 @@ Task 3.     Добавьте к заданию 1 кнопку button.u-3__shift,
             метод shift (читать про метод shift). После применения shift, массив arr1 выводится в div.out-1.
 */
 
-document.querySelector("button.u-3__shift").onclick = () => {
-  arr1.shift();
+document.querySelector('button.u-3__shift').onclick = () => {
+    arr1.shift();
 
-  printArray(arr1, "div.out-1");
+    printArray(arr1, 'div.out-1');
 };
 
 /*
@@ -51,14 +51,14 @@ Task 4.     Добавьте к заданию 1 кнопку button.u-4__unshif
             догадаетесь проверять input на пустоту перед применением unshift. Надеюсь, вы это сделали и в первой задаче?
 */
 
-document.querySelector("button.u-4__unshift").onclick = () => {
-  const inp4 = document.querySelector("input.u-4").value;
+document.querySelector('button.u-4__unshift').onclick = () => {
+    const inp4 = document.querySelector('input.u-4').value;
 
-  if (inp4 === "") return;
+    if (inp4 === '') return;
 
-  arr1.unshift(inp4);
+    arr1.unshift(inp4);
 
-  printArray(arr1, "div.out-1");
+    printArray(arr1, 'div.out-1');
 };
 
 /*
@@ -68,17 +68,58 @@ Task 5.     Обьявите массив arr5, добате два элемен
             let arr5 = [3,14, 15, 92, 6, 54, 123, 87, 66, 43, 12, 90, 'hello'];
 */
 
-const arr5 = [3, 14, 15, 92, 6, 54, 123, 87, 66, 43, 12, 90, "hello"];
+const arr5 = [3, 14, 15, 92, 6, 54, 123, 87, 66, 43, 12, 90, 'hello'];
 
-printArray(arr5, "div.out-5");
+printArray(arr5, 'div.out-5');
 
-document.querySelector("button.u-5__splice").onclick = () => {
-  const ind5 = document.querySelector("input.u-5-index").value;
-  const cnt5 = document.querySelector("input.u-5-count").value;
+document.querySelector('button.u-5__splice').onclick = () => {
+    const ind5 = document.querySelector('input.u-5-index').value;
+    const cnt5 = document.querySelector('input.u-5-count').value;
 
-  if (ind5 === "" || cnt5 === "") return;
+    if (ind5 === '' || cnt5 === '') return;
 
-  arr5.splice(ind5, cnt5);
+    arr5.splice(ind5, cnt5);
 
-  printArray(arr5, "div.out-5");
+    printArray(arr5, 'div.out-5');
 };
+
+/*
+Task 6.		Напишите функцию funcPush, которая эмулирует работу метода push, функция, по нажатию кнопки:
+              читает содержимое input в переменную
+              вычисляет длину массива
+              присваивает массиву новый элемент, а в качестве индекса указывает длину массива
+              Выводит массив на страницу
+*/
+
+let arr6 = [];
+
+function funcPush(arr) {
+    const arrCopy = new Array(arr);
+
+    const v6 = document.querySelector('input.u-6').value;
+
+    arrCopy[arrCopy.length] = v6;
+
+    return arrCopy;
+}
+
+document.querySelector('button.u-6').onclick = () => {
+    arr6 = funcPush(arr6);
+    printArray(arr6, 'div.out-6');
+};
+
+/*
+Task 7.		Напишите функцию funcPop, которая эмулирует работу метода pop, функция, по нажатию кнопки:
+				удаляет последний элемент массива
+				Выводит массив на страницу
+*/
+
+// const arr7 = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+// document.querySelector('button.u-7').onclick = () => {
+//     const v6 = document.querySelector('input.u-6').value;
+
+//     arr6[arr6.length] = v6;
+
+//     printArray(arr6, 'div.out-6');
+// };
