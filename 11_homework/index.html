@@ -10,105 +10,157 @@
 </head>
 
 <body>
-    <div>
-        <p>Task 1. Создайте пустой массив arr1, input.u-1, кнопку button.u-2__push. При нажатии кнопки, функция читает
-            содержимое input и добавляет содержимое в массив, после чего выводит содержимое массива в div.out-1.</p>
+    <div class="container">
+        <div class="header">
+            <h1>JS 2.0. Homework 11.</h1>
+        </div>
+
+
+        <div class="task-desc"><span class="task-num">Task 1.</span> Создайте пустой массив arr1, input.u-1, кнопку
+            button.u-2__push. При
+            нажатии кнопки, функция читает содержимое input и добавляет содержимое в массив, после чего выводит
+            содержимое массива в div.out-1.</div>
 
         <input type="text" class="u-1">
-        <button class="u-2__push">Push</button>
-        <div class="out-1"></div>
+        <div class="out out-1"></div>
+        <button class="button u-2__push">Push</button>
 
 
 
         <hr class="divider">
 
-        <p>Task 2. Добавьте к предыдущему заданию кнопку button.u-2__pop, при нажатии которой, к массиву arr1
-            применяется метод
-            pop, после чего массив выводится в div.out-1</p>
+        <div class="task-desc"><span class="task-num">Task 2.</span> Добавьте к предыдущему заданию кнопку
+            button.u-2__pop, при нажатии
+            которой, к массиву arr1 применяется метод pop, после чего массив выводится в div.out-1</div>
 
-        <button class="u-2__pop">Pop</button>
-
-
-
-        <hr class="divider">
-
-        <p>Task 3. Добавьте к заданию 1 кнопку button.u-3__shift, которая применяет к массиву arr1 метод shift (читать
-            про метод shift). После применения shift, массив arr1 выводится в div.out-1.</p>
-
-        <button class="u-3__shift">Shift</button>
+        <button class="button u-2__pop">Pop</button>
 
 
 
         <hr class="divider">
 
-        <p>Task 4. Добавьте к заданию 1 кнопку button.u-4__unshift, которая применяет к массиву arr1 метод unshift (
-            читать про метод unshift). После применения unshift, массив arr1 выподится в div.out-1. Надеюсь, вы
-            догадаетесь проверять input на пустоту перед применением unshift. Надеюсь, вы это сделали и в первой задаче?
-        </p>
+        <div class="task-desc"><span class="task-num">Task 3.</span> Добавьте к заданию 1 кнопку button.u-3__shift,
+            которая применяет к
+            массиву arr1 метод shift (читать про метод shift). После применения shift, массив arr1 выводится в
+            div.out-1.</div>
+
+        <button class="button u-3__shift">Shift</button>
+
+
+
+        <hr class="divider">
+
+        <div class="task-desc"><span class="task-num">Task 4.</span> Добавьте к заданию 1 кнопку button.u-4__unshift,
+            которая применяет к
+            массиву arr1 метод unshift (читать про метод unshift). После применения unshift, массив arr1 выподится в
+            div.out-1. Надеюсь, вы догадаетесь проверять input на пустоту перед применением unshift. Надеюсь, вы это
+            сделали и в первой задаче?
+        </div>
 
         <input type="text" class="u-4">
-        <button class="u-4__unshift">Unshift</button>
+        <button class="button u-4__unshift">Unshift</button>
 
 
 
         <hr class="divider">
 
-        <p>Task 5. Обьявите массив arr5, добате два элемента input, в первый пользователь может ввести индекс элемента,
-            во второй - количество. Добавьте кнопку, по нажатию на которую к массиву arr5 применяется метод splice.
-            Результат применения выводите в div.out-5.
-        </p>
+        <div class="task-desc"><span class="task-num">Task 5.</span> Обьявите массив arr5, добате два элемента input, в
+            первый пользователь
+            может ввести индекс элемента, во второй - количество. Добавьте кнопку, по нажатию на которую к массиву arr5
+            применяется метод splice. Результат применения выводите в div.out-5.
+        </div>
 
         <p>Enter index :<input type="text" class="u-5-index"></p>
         <p>Enter count :<input type="text" class="u-5-count"></p>
-        <p><button class="u-5__splice">Splice</button></p>
-        <p><div class="out-5"></div></p>
+        <p>
+            <div class="out out-5"></div>
+        </p>
+        <p><button class="button u-5__splice">Splice</button></p>
 
 
 
         <hr class="divider">
 
-        <p>Task 5. Обьявите массив arr5, добате два элемента input, в первый пользователь может ввести индекс элемента,
-            во второй - количество. Добавьте кнопку, по нажатию на которую к массиву arr5 применяется метод splice.
-            Результат применения выводите в div.out-5.
-        </p>
-
-        <p>Enter index :<input type="text" class="u-5-index"></p>
-        <p>Enter count :<input type="text" class="u-5-count"></p>
-        <p><button class="u-5__splice">Splice</button></p>
-        <p><div class="out-5"></div></p>
-
-
-
-        <hr class="divider">
-
-        <p>Task 6. Напишите функцию funcPush, которая эмулирует работу метода push, функция, по нажатию кнопки:
-            читает содержимое input в переменную
-            вычисляет длину массива
-            присваивает массиву новый элемент, а в качестве индекса указывает длину массива
-            Выводит массив на страницу
-        </p>
+        <div class="task-desc"><span class="task-num">Task 6.</span> Напишите функцию funcPush, которая эмулирует работу
+            метода push,
+            функция, по нажатию кнопки:
+            <ul>
+                <li>читает содержимое input в переменную</li>
+                <li>вычисляет длину массива</li>
+                <li>присваивает массиву новый элемент, а в качестве индекса указывает длину массива</li>
+            </ul>
+            Выведите массив на страницу.
+        </div>
 
         <p>Enter new value :<input type="text" class="u-6"></p>
-        <p><button class="u-6">My Push</button></p>
-        <p><div class="out-6"></div></p>
+        <div class="out out-6"></div>
+        <button class="button u-6">My Push</button>
 
 
 
         <hr class="divider">
 
-        <p>Task 7. Напишите функцию funcPop, которая эмулирует работу метода pop, функция, по нажатию кнопки:
-            удаляет последний элемент массива
-            Выводит массив на страницу
-        </p>
+        <div class="task-desc"><span class="task-num">Task 7.</span> Напишите функцию funcPop, которая эмулирует работу
+            метода pop, функция,
+            по нажатию кнопки:
+            <ul>
+                <li>удаляет последний элемент массива</li>
+            </ul>
+            Выведите массив на страницу.
+        </div>
 
-        <p>Enter new value :<input type="text" class="u-6"></p>
-        <p><button class="u-6">My Pop</button></p>
-        <p><div class="out-6"></div></p>
+        <div class="out out-7"></div>
+        <button class="button u-7">My Pop</button>
+
+
+
+        <hr class="divider">
+
+        <div class="task-desc"><span class="task-num">Task 8.</span> Напишите функцию funcShift, которая эмулирует
+            работу метода shift,
+            функция, по нажатию кнопки:
+            <ul>
+                <li>создает новый массив где нулевым элементом выступает первый элемент исходного массива</li>
+            </ul>
+            Выведите массив на страницу.
+        </div>
+
+        <div class="out out-8"></div>
+        <button class="button u-8">My Shift</button>
+
+
+
+
+        <hr class="divider">
+
+        <div class="task-desc"><span class="task-num">Task 9.</span> Напишите функцию funcUnShift, которая эмулирует
+            работу метода unshift, функция, по нажатию кнопки:
+            <ul>
+                <li>читает содержимое input в переменную</li>
+                <li>создает новый массив где нулевым элементов задает считанную из input строку</li>
+                <li>дописывает остальные значения старого массива в новый</li>
+            </ul>
+            Выведите массив на страницу.
+        </div>
+
+        <p>Enter new value :<input type="text" class="u-9"></p>
+        <div class="out out-9"></div>
+        <button class="button u-9">My UnShift</button>
+
+
+
+        <hr class="divider">
+
+        <div class="task-desc"><span class="task-num">Task 10.</span> Создайте массив arr10, примените к массиву метод
+            reverse ( читать за метод reverse). После применения reverse, массив arr10 выподится в div.out-10.
+        </div>
+
+        <div class="out out-10"></div>
+        <button class="button u-10">Reverse</button>
 
 
 
     </div>
-    <hr>
 
     <script src="script.js"></script>
 </body>

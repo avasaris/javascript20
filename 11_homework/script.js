@@ -1,3 +1,5 @@
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
+
 function printArray(arr, selector) {
     let out = '';
     if (arr && arr.length) out = JSON.stringify(arr);
@@ -85,20 +87,19 @@ document.querySelector('button.u-5__splice').onclick = () => {
 
 /*
 Task 6.		Напишите функцию funcPush, которая эмулирует работу метода push, функция, по нажатию кнопки:
-              читает содержимое input в переменную
-              вычисляет длину массива
-              присваивает массиву новый элемент, а в качестве индекса указывает длину массива
-              Выводит массив на страницу
+                - читает содержимое input в переменную
+                - вычисляет длину массива
+                - присваивает массиву новый элемент, а в качестве индекса указывает длину массива
+            Выведите массив на страницу
 */
 
 let arr6 = [];
 
 function funcPush(arr) {
-    const arrCopy = new Array(arr);
+    const arrCopy = arr.slice();
 
-    const v6 = document.querySelector('input.u-6').value;
-
-    arrCopy[arrCopy.length] = v6;
+    const newElem = document.querySelector('input.u-6').value;
+    arrCopy[arrCopy.length] = newElem;
 
     return arrCopy;
 }
@@ -110,16 +111,87 @@ document.querySelector('button.u-6').onclick = () => {
 
 /*
 Task 7.		Напишите функцию funcPop, которая эмулирует работу метода pop, функция, по нажатию кнопки:
-				удаляет последний элемент массива
-				Выводит массив на страницу
+				- удаляет последний элемент массива
+			Выведите массив на страницу
 */
 
-// const arr7 = ['test1', 'test2', 'test3', 'test4', 'test5'];
+let arr7 = ['test1', 'test2', 'test3', 'test4', 'test5'];
 
-// document.querySelector('button.u-7').onclick = () => {
-//     const v6 = document.querySelector('input.u-6').value;
+printArray(arr7, 'div.out-7');
 
-//     arr6[arr6.length] = v6;
+function funcPop(arr) {
+    const arrCopy = arr.slice();
 
-//     printArray(arr6, 'div.out-6');
-// };
+    arrCopy.length -= 1;
+
+    return arrCopy;
+}
+
+document.querySelector('button.u-7').onclick = () => {
+    arr7 = funcPop(arr7);
+    printArray(arr7, 'div.out-7');
+};
+
+/*
+Task 8.		Напишите функцию funcShift, которая эмулирует работу метода shift, функция, по нажатию кнопки:
+                - cоздает новый массив где нулевым элементом выступает первый элемент исходного массива
+            Выведите массив на страницу
+*/
+
+let arr8 = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+printArray(arr8, 'div.out-8');
+
+function funcShift(arr) {
+    const retArr = [];
+
+    for(let i=1; i<arr.length; i++) retArr[i-1]=arr[i];
+
+    return retArr;
+}
+
+document.querySelector('button.u-8').onclick = () => {
+    arr8 = funcShift(arr8);
+    printArray(arr8, 'div.out-8');
+};
+
+/*
+Task 9.		Напишите функцию funcUnShift, которая эмулирует работу метода unshift, функция, по нажатию кнопки:
+                - читает содержимое input в переменную
+                - создает новый массив где нулевым элементов задает считанную из input строку
+                - дописывает остальные значения старого массива в новый
+            Выведите массив на страницу
+*/
+
+let arr9 = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+printArray(arr9, 'div.out-9');
+
+function funcUnShift(inp, arr) {
+    const retArr = [inp];
+
+    for(let i=0; i<arr.length; i++) retArr[i+1]=arr[i];
+
+    return retArr;
+}
+
+document.querySelector('button.u-9').onclick = () => {
+    const inp9 = document.querySelector('input.u-9').value;
+    if (inp9 === '') return;
+
+    arr9 = funcUnShift(inp9, arr9);
+    printArray(arr9, 'div.out-9');
+};
+
+/*
+Task 10.		Создайте массив arr10, примените к массиву метод reverse ( читать за метод reverse). После применения reverse, массив arr10 выподится в div.out-10.
+*/
+
+let arr10 = [2,4, 6, 8, 10, 'hello'];
+
+printArray(arr10,'div.out-10');
+
+document.querySelector('button.u-10').onclick = () => {
+    arr10.reverse();
+    printArray(arr10,'div.out-10');
+}
