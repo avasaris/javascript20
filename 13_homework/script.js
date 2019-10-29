@@ -324,12 +324,10 @@ Task 15.    Добавьте к предыдущей задаче select.u14-fin
 function getStationPosition(choise, metros, line) {
     let retPos = 0;
 
-    let pos = 0;
-    metros[line].forEach(item => {
-        if (choise === item) retPos = pos;
-        pos += 1;
+    metros[line].forEach((item, index) => {
+        if (choise === item) retPos = index;
     });
-    
+
     return retPos;
 }
 
@@ -355,14 +353,40 @@ document.querySelector('.b-15').onclick = () => {
     if (line1 === line2) {
         const p1 = getStationPosition(firstChoise, metroS, line1);
         const p2 = getStationPosition(secondChoise, metroS, line2);
-        if (Math.abs(p1 - p2) > 1) {
+        if (Math.abs(p1 - p2) > 0) {
             answer = Math.abs(p1 - p2) - 1;
         } else {
-            answer = 'Stations are neibhourds or same.';
+            answer = 'Stations are same.';
         }
     } else {
-        answer = 'Stations not on the line.';
+        answer = 'Stations not on the same line.';
     }
 
     document.querySelector('.out-15').innerHTML = answer;
 };
+
+/* 
+Task 16.    Добавьте 3 radiobutton.u16-radio которые содержат value = red, green, blue
+             - в соотвтествии с цветом веток метро. Добавьте пустой select.u16-select. 
+            При выборе radio - программа должна в select добавлять option с названиями станций метро. 
+            Т.е. выбрали radio(value="green") то внутрь select должны быть записаны option со 
+            станциями зеленой ветки. Выбрали red - select должен быть очищен и добавлены option 
+            со станциями красной ветки.
+*/
+
+document.querySelectorAll('.u16-radio').forEach((item) => {
+    item.onclick = () => {
+        const choise = document.querySelector('.u16-radio:checked').value;
+
+        let options = '';
+        metroS[choise].forEach(item => options += `<option>${item}</option>`);
+
+        document.querySelector('.u16-select').innerHTML = options;
+    };
+});
+
+/* 
+Task 17.    Создайте массив, который описывает метро киевского метрополитена и обозначаются 
+            конечные и станции перехода, выведите его на страницу. Конечные - обозначать 0, перехода - 1.
+*/
+
