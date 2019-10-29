@@ -390,3 +390,148 @@ Task 17.    Создайте массив, который описывает м�
             конечные и станции перехода, выведите его на страницу. Конечные - обозначать 0, перехода - 1.
 */
 
+const a17 = {
+    "red": [
+        ['Академгородок', 0],
+        ['Театральная', 1],
+        ['Крещатик', 1],
+        ['Лесная', 0]
+    ],
+    "green": [
+        ['Сырец', 0],
+        ['Золотые ворота', 1],
+        ['Дворец спорта', 1],
+        ['Красный хутор', 0]
+    ],
+    "blue": [
+        ['Героев Днепра', 0],
+        ['Площадь Независимости', 1],
+        ['Площадь Льва Толстого', 1],
+        ['Теремки', 0]
+    ]
+}
+
+function task17(a17, predicat) {
+    let ret = `{\n`;
+
+    for (const line in a17) {
+        ret += `  ${line} : [\n`;
+        a17[line].forEach(item => {
+            if (predicat(item[1]))
+                ret += `    ${JSON.stringify(item)},\n`;
+        });
+        ret = ret.substr(0, ret.length - 2);
+        ret += '\n  ],\n';
+    }
+    ret = ret.substr(0, ret.length - 2);
+    ret += '\n}';
+
+    return ret;
+}
+
+document.querySelector('.out-17').innerHTML = '<pre>' + task17(a17, () => true) + '</pre>';
+
+/* 
+Task 18.    Выведите на страницу только станции с переходами из массива a17.
+*/
+
+document.querySelector('.out-18').innerHTML = '<pre>' + task17(a17, p => p === 1) + '</pre>';
+
+/* 
+Task 19.    Создайте ассоциативный массив где ключами являются страны азии, а вложенными 
+            массивами - ассоциативный массив содержащий название столицы, количество населения, 
+            площадь. Выведите его на страницу.
+*/
+
+const a19 = {
+    Afghanistan:
+    {
+        capital: 'Kabul',
+        country_code: 'AF',
+        timezone: ['Asia/Kabul']
+    },
+    'United Arab Emirates':
+    {
+        capital: 'Abu Dhabi',
+        country_code: 'AE',
+        timezone: ['Asia/Dubai']
+    },
+    Armenia:
+    {
+        capital: 'Yerevan',
+        country_code: 'AM',
+        timezone: ['Asia/Yerevan']
+    },
+    Azerbaijan:
+    {
+        capital: 'Baku',
+        country_code: 'AZ',
+        timezone: ['Asia/Baku']
+    },
+    Bangladesh:
+    {
+        capital: 'Dhaka',
+        country_code: 'BD',
+        timezone: ['Asia/Dhaka']
+    },
+    Bahrain:
+    {
+        capital: 'Manama',
+        country_code: 'BH',
+        timezone: ['Asia/Bahrain']
+    },
+    Brunei:
+    {
+        capital: 'Bandar Seri Begawan',
+        country_code: 'BN',
+        timezone: ['Asia/Brunei']
+    },
+    Bhutan:
+    {
+        capital: 'Thimphu',
+        country_code: 'BT',
+        timezone: ['Asia/Thimphu']
+    },
+    China:
+    {
+        capital: 'Beijing',
+        country_code: 'CN',
+        timezone: ['Asia/Shanghai', 'Asia/Urumqi']
+    }
+}
+
+function printCountry(country) {
+    return JSON.stringify(country, null, '   ');
+}
+
+function printAsia(world) {
+    let ret = '{\n';
+
+    for (const country in world) ret += printCountry(world[country]) + ',\n';
+    ret = ret.substr(0, ret.length - 2);
+    ret += '\n}';
+
+    return ret;
+}
+
+document.querySelector('.out-19').innerHTML = '<pre>' + printAsia(a19) + '</pre>';
+
+/* 
+Task 20.    Дополните массив из задачи 19 так, чтобы пользователь мог сам выбирать 
+            страну в select, а необходимая информация подтягивалась на страницу.
+*/
+
+let option20 = '';
+
+Object
+    .keys(a19)
+    .forEach(item => option20 += `<option>${item}</option>`);
+
+document.querySelector('.u20-branch').innerHTML = option20;
+document.querySelector('.out-20').innerHTML = "<pre>" + printCountry(a19[Object.keys(a19)[0]]) + "</pre>";
+
+document.querySelector('.u20-branch').onclick = () => {
+    const country = document.querySelector('.u20-branch').value;
+
+    document.querySelector('.out-20').innerHTML = "<pre>" + printCountry(a19[country]) + "</pre>";
+}
