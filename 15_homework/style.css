@@ -1,61 +1,13 @@
-/* * {
-    margin: 0px;
-    padding: 0px;
-} */
-
-html, body {
-    font-family: serif;
+.container  {
+    width: 100%;
 }
 
-body {
-    margin: 20px;
+section {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #444;
 }
 
-ul {
-    margin: 0px;
-}
-
-div.task-desc {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #f8f8f8;
-/*    border: 1px solid black;*/
-}
-
-div.header {
-    background-color: #ffe;
-    text-align: center;
-}
-
-div.container {
-    width: 800px;
-    min-width: 600px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-hr.divider {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-div.out {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #eaf4f7;
-    padding: 2px;
-    min-height: 20px;
-}
-
-button.button {
-    width: 100px;
-    padding: 2px;
-}
-
-input.text {
-    padding: 2px;
-}
-
-span.task-num {
-    font-weight: bold;
+input[type="text"] {
+    margin-bottom: 20px;
 }
