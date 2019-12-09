@@ -43,7 +43,8 @@ document.querySelector('.b-2').onclick = t2;
 /* При нажатии кнопки, получите div.u-3 с помощью getElementsByClassName, переберите циклом for, допишите в каждый из div цифру 3 (без пробелов). Действия запускаются при вызове функции t3. */
 
 function t3() {
-
+    let divs = document.getElementsByClassName('u-3');
+    for (let i = 0; i < divs.length; i++) divs[i].innerHTML += '3';
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -54,7 +55,8 @@ document.querySelector('.b-3').onclick = t3;
 */
 
 function t4() {
-
+    let divs = document.querySelectorAll('.u-3');
+    for (let item of divs) item.innerHTML += '4';
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -67,6 +69,17 @@ document.querySelector('.b-4').onclick = t4;
 
 function t5() {
 
+    // Если раскомментировать код ниже, то получим ошибку, т.к. HTMLCollection не предоставляет метода push
+
+    let divs = document.getElementsByClassName('u-3');
+    console.log(divs);
+
+    let myDiv = document.createElement('div');
+    myDiv.innerHTML = 'mydiv';
+
+    //divs.push(myDiv);
+    console.log(divs);
+    document.querySelector('.out-5').innerHTML = JSON.stringify(divs);
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -77,6 +90,18 @@ document.querySelector('.b-5').onclick = t5;
 
 function t6() {
 
+    // Если раскомментировать код ниже, то получим ошибку, т.к. NodeList не предоставляет метода push
+
+    let divs = document.querySelectorAll('.u-3');
+    console.log(divs);
+
+    let myDiv = document.createElement('div');
+    myDiv.innerHTML = 'mydiv';
+
+    //divs.push(myDiv);
+    console.log(divs);
+    document.querySelector('.out-6').innerHTML = JSON.stringify(divs);
+
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -86,7 +111,13 @@ document.querySelector('.b-6').onclick = t6;
 /*  Дан массив a7 = [ [1,2], [3,4], [5,6]], напишите функцию которая делает из него массив [1,2,3,4,5,6]. Используем for. Действия должны запускаться при вызове функции t7. Результат - выведите на страницу и сохраните в массив a7_res. */
 
 function t7() {
-
+    let a7 = [[1, 2], [3, 4], [5, 6]];
+    for (let i = 0; i < a7.length; i++) {
+        for (let j = 0; j < a7[i].length; j++) {
+            a7_res.push(a7[i][j]);
+        }
+    }
+    document.querySelector('.out-7').innerHTML = JSON.stringify(a7_res);
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -97,7 +128,13 @@ document.querySelector('.b-7').onclick = t7;
 let a8 = [[1, 2, 3], [3, 4, 9], [5, 6]];
 
 function t8(a8) {
+    let a8_res = 0;
+    for (let i = 0; i < a8.length; i++) {
+        let newInd = a8[i].length - 1;
+        if (a8_res < newInd) a8_res = newInd;
+    }
 
+    document.querySelector('.out-8').innerHTML = a8_res;
 }
 
 document.querySelector('.b-8').onclick = function () {
@@ -111,7 +148,12 @@ document.querySelector('.b-8').onclick = function () {
 let a9 = [4, 6, 9, "hello"];
 
 function t9(a9) {
+    for (let i = 0; i < a9.length; i++) {
+        a9_res[a9[i]] = a9[i];
+    }
 
+    document.querySelector('.out-9').innerHTML = JSON.stringify(a9_res);
+    console.log(a9_res);
 }
 
 document.querySelector('.b-9').onclick = function () {
@@ -127,8 +169,9 @@ document.querySelector('.b-9').onclick = function () {
 let a10 = [5, 7, 9, 11, 13, 15];
 
 function t10(a10) {
+    for (let key in a10) a10_res += a10[key] + ' ';
 
-
+    document.querySelector('.out-10').innerHTML = a10_res;
 }
 
 document.querySelector('.b-10').onclick = function () {
@@ -143,8 +186,10 @@ document.querySelector('.b-10').onclick = function () {
 let a11 = [5, 7, 9, 11, 13, 15];
 
 function t11(a11) {
+    for (let key in a11) a11_res += `${key}-${a11[key]}<br>`;
 
-
+    document.querySelector('.out-11').innerHTML = a11_res;
+    console.log(a11_res);
 }
 
 document.querySelector('.b-11').onclick = function () {
@@ -158,8 +203,8 @@ document.querySelector('.b-11').onclick = function () {
 
 
 function t12() {
-
-
+    let divs12 = document.getElementsByClassName('u-12');
+    for (let key in divs12) divs12[key].innerHTML += '12';
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -170,8 +215,8 @@ document.querySelector('.b-12').onclick = t12;
 
 
 function t13() {
-
-
+    let divs13 = document.querySelectorAll('.u-13');
+    for (let key in divs13) divs13[key].innerHTML += '13';
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -185,8 +230,13 @@ document.querySelector('.b-13').onclick = t13;
 let a14 = [[1, 2], [3, 4], [5, 6]];
 
 function t14(a14) {
+    for (let key1 in a14) {
+        for (let key2 in a14[key1]) {
+            a14_res.push(a14[key1][key2]);
+        }
+    }
 
-
+    document.querySelector('.out-14').innerHTML = JSON.stringify(a14_res);
 }
 
 document.querySelector('.b-14').onclick = function () {
@@ -199,10 +249,15 @@ document.querySelector('.b-14').onclick = function () {
     Действия должны запускаться при вызове функции t15. Результат операции запишите в a15_res.
  */
 
-let a15 = [[1, 2], [3, 4], [5, 6]];
+let a15 = [[1, 2, 3], [3, 4, 9], [5, 6]];
 
 function t15(a15) {
+    for (let key in a15) {
+        let newLength = a15[key].length - 1;
+        if (newLength > a15_res) a15_res = newLength;
+    }
 
+    document.querySelector('.out-15').innerHTML = a15_res;
 
 }
 
@@ -219,8 +274,10 @@ document.querySelector('.b-15').onclick = function () {
 let a16 = [4, 6, 9, "hello"];
 
 function t16(a16) {
+    for (let key in a16) a16_res[a16[key]] = a16[key];
 
-
+    document.querySelector('.out-16').innerHTML = JSON.stringify(a16_res);
+    console.log(a16_res);
 }
 
 document.querySelector('.b-16').onclick = function () {
@@ -235,8 +292,10 @@ document.querySelector('.b-16').onclick = function () {
 let a17 = [5, 7, 9, 11, 13, 15];
 
 function t17(a17) {
+    let a17_res = '';
+    for (let val of a17) a17_res += `${val} `;
 
-
+    document.querySelector('.out-17').innerHTML = a17_res;
 }
 
 document.querySelector('.b-17').onclick = function () {
@@ -252,8 +311,13 @@ document.querySelector('.b-17').onclick = function () {
 let a18 = [5, 7, 9, 11, 13, 15];
 
 function t18(a18) {
+    let key = 0;
+    for (let val of a18) {
+        a18_res += `${key}-${val}<br>`;
+        key++;
+    }
 
-
+    document.querySelector('.out-18').innerHTML = a18_res;
 }
 
 document.querySelector('.b-18').onclick = function () { t18(a18) };
@@ -265,7 +329,8 @@ document.querySelector('.b-18').onclick = function () { t18(a18) };
 
 
 function t19() {
-
+    let divs19 = document.getElementsByClassName('u-19');
+    for (let item of divs19) item.innerHTML += '19';
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -278,6 +343,10 @@ document.querySelector('.b-19').onclick = t19;
 let a20 = [4, 6, 9, "hello"];
 
 function t20(a20) {
+    for (let item of a20) a20_res[item] = item;
+
+    document.querySelector('.out-20').innerHTML = JSON.stringify(a20_res);
+    console.log(a20_res);
 }
 
 document.querySelector('.b-20').onclick = function () {
