@@ -359,7 +359,7 @@ document.querySelector('.b-15').onclick = () => {
             answer = 'Stations are same.';
         }
     } else {
-        answer = 'Stations not on the same line.';
+        answer = 'Stations are not on the same line.';
     }
 
     document.querySelector('.out-15').innerHTML = answer;
