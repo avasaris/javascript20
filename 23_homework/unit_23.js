@@ -123,7 +123,6 @@ document.querySelectorAll('input[name="rb-9"]').forEach(item => item.onclick = (
     t9()
 });
 
-
 // Task 10 ============================================
 /*  Проект. Дана переменная card - корзина. Добавьте кнопку b-10 и функцию t10, которые сохраняют card в LS.*/
 
@@ -131,42 +130,74 @@ const card = {
     'apple': 3,
     'grape': 2
 }
+let totalGoods = 0;
 
 function t10() {
-
+    cardLS = JSON.stringify(card);
+    localStorage.setItem('card', cardLS);
 }
+
+t10();
+
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
+    cardLS = JSON.parse(localStorage.getItem('card'));
+    
+    table = "<table>";
+    Object.entries(cardLS).forEach(([key, val]) => {
+        table += `<tr><td>${key}</td><td>${val}</td><td><button class="button-primary changeInCart" data-id="${key}" data-action="plus">+</button></td><td><button class="button-primary changeInCart" data-id="${key}" data-action="minus">-</button></td></tr>`;
+    });
+    table += `<tr><td>Total goods:</td><td>${totalGoods}</td><td></td><td></td></tr>`;
+    table += "</table>";
 
+    document.querySelector('.out-10').innerHTML = table;
+
+    document.querySelectorAll('.changeInCart').forEach(function(elem){
+        elem.onclick=t12;
+    });
 }
-
-// ваше событие здесь!!!
 
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
+    //console.table(this.dataset.id,this.dataset.action);
 
+    switch(this.dataset.action){
+        case 'plus':
+            card[this.dataset.id]++;
+            break;
+        case 'minus':
+            card[this.dataset.id]? card[this.dataset.id]-- : {};
+            break;
+    }
+    t10();
+    t13();
+    t11();
 }
-
-// ваше событие здесь!!!
 
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
 function t13() {
-
+    cardLS = JSON.parse(localStorage.getItem('card'));
+    totalGoods = 0;
+    Object.entries(cardLS).forEach(([key, val]) => {
+        totalGoods += +val;
+    });
 }
-
-// ваше событие здесь!!!
 
 // Task 14 ============================================
-/*  Добавьте функцию t13, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
+/*  Добавьте функцию t14, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
 
-function t13() {
-
+function t14() {
+    if(localStorage.getItem('card')){
+        t10();
+        t13();
+        t11();
+    }
 }
 
-// ваше событие здесь!!!
+t14();
