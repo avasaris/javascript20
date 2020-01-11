@@ -63,14 +63,14 @@ console.log('Task 9:', auth2.isValid);
 
 console.dir(Valid2);
 
- //Task 11.
- // Создайте на основе класса Valid2 объект valid2 и задайте пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
+//Task 11.
+// Создайте на основе класса Valid2 объект valid2 и задайте пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
 
 let valid2 = new Valid2('', 'qazwsxedc');
-console.log('Task 11: ',valid2);
+console.log('Task 11: ', valid2);
 
- //Task 12.
- // Создайте на основе класса Valid2 объект valid3 и задайте не пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
+//Task 12.
+// Создайте на основе класса Valid2 объект valid3 и задайте не пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
 
- let valid3 = new Valid2('test@test.test', 'qazwsxedc');
-console.log('Task 12: ',valid3);
+let valid3 = new Valid2('test@test.test', 'qazwsxedc');
+console.log('Task 12: ', valid3);
