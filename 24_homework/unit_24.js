@@ -35,7 +35,7 @@ function applyForVisa(documents) {
 
     let promise = new Promise(function (resolve, reject) {
         setTimeout(function () {
-            if (Math.random() > 0) {
+            if (Math.random() > 0.5) {
                 resolve({ country: 'Germany' });
             } else {
                 reject("Sorry, not this time...");
@@ -54,7 +54,8 @@ function getVisa(visa) {
 function bookHotel(visa) {
     console.log("visa for booking: ", visa);
     console.info('Trying to book the room in Hotel');
-    return Promise.reject({reason:'we havent free rooms'});
+    return Promise.resolve({reason:'we have free rooms'});
+//    return Promise.reject({reason:'we havent free rooms'});
 }
 
 function buyTicket() {
